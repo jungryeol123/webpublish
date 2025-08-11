@@ -20,7 +20,8 @@ syntax> style = "프로퍼티 : 값;"
   시작태그 ~ 형제 태그(모든 형제) 태그
 - Attribute Selector(속성 선택자) : 태그의 속성값을 구분하여 스타일을 적용, [속성] 으로 구분
 - Pseudo Class Selector : 정해진 이벤트적 요소를 실행하면서 스타일 적용, : pseudo 클래스명, :hover , :focus...
--  
+- NTH Child Selector : 
+- Status Selector : 
 
 ## 4. 단위 - pixel, %, em, rem ...
 - pixel은 고정된 길이로 설정, 화면 크기가 변경되어도 사이즈 유지

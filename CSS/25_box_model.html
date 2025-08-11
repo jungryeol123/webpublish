@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        /*
+            margin과 padding은 Top, Right, Bottom, Left 순서의 시계방향으로 값을 정의
+            margin : 10px 5px 10px 5px;
+            == margin : 10px 5px;
+            margin-bottom : 10px;
+        */
+
+        .padding, .margin {
+            width: 30%;
+        }
+        .padding h3 {
+            margin : 20px 10px
+        }
+        .padding {
+            border: 1px solid blue;
+            /*margin-top: 30px;
+            margin-bottom: 50px;
+            margin-right: 100px;
+            margin-left: 100px;*/
+            margin : 30px 100px 50px 100px
+        }
+        .margin{
+            border: 1px solid red;
+            margin-left: 50px;
+            padding-left: 50px;
+
+        }
+        h3 {
+            border: 1px solid gray;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            /* background-color: aqua; */
+        }
+        .inline {
+            width: 30%;
+            /* text-align: center; */
+            border : 5px solid green;
+            /* padding: 20px 10px; */
+        }
+        .inline span {
+            border: 3px solid tomato;
+            /* margin: 20px; */
+            /* display: inline-block; */
+            padding: 20px;
+            /* margin은 블록라인에서만 가능하기 때문에 인라인을 블록레벨이나 인라인블록레벨로 변환시켜줘야한다.
+               padding은 inline에서도 가능
+            */
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Model Style : content, border, padding, margin</h1>
+    <div class="inline">
+        <span>Span Test!!</span>
+    </div>
+    <div class="padding">
+        <h3>padding</h3>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Cumque obcaecati, possimus, est iure nesciunt exercitationem saepe asperiores 
+        id odio voluptatibus iste maiores assumenda aut delectus nisi dolor nam? Saepe, commodi!
+    </div>
+    <div class="margin">
+        <h3>Margin</h3>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Cumque obcaecati, possimus, est iure nesciunt exercitationem saepe asperiores 
+        id odio voluptatibus iste maiores assumenda aut delectus nisi dolor nam? Saepe, commodi!
+    </div>
+</body>
+</html>
