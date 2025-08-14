@@ -1,0 +1,55 @@
+.header-container ul,li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    color: rgb(255,56,92);
+}
+.logo-text a{
+    color: gray;
+}
+.header-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.house-lists {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding: 1rem;
+    margin: 1rem;
+}
+.house-list span{
+    display: flex;
+    flex-direction: column;
+    
+}
+.house-name {
+    font-weight: bold;
+}
+.date, .price {
+    opacity: 0.5;
+}
+.title {
+    font-weight: bold;
+}
+.title .subtitle {
+    display: flex;
+    margin-top: 1rem;
+    border-bottom: 1px solid gray;
+}
+footer div{
+    
+    margin: 0;
+    width: 100%;
+    height: 600px;
+    background-color: rgb(247, 247, 247);
+}
+.divide {
+    display: flex;
+    justify-content: space-between;
+}

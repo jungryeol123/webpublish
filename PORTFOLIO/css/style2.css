@@ -162,7 +162,7 @@ section.container {
     color: var(--color-white);
     padding: 2rem 1rem;
     border-radius: 1rem;
-    box-shadow: 4px 8px 8px rgba(0, o, o, 0.38);
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
 }
 .major-icon {
     font-size: 4rem;
@@ -376,6 +376,31 @@ section.container {
     color: var(--color-orange);
 
 }
+/*
+    Scroll-bar
+*/
+.slider-bar {
+    position: fixed;
+    border-radius: 12px; 
+    text-align: center;
+    top: 300px;
+    right: 0;
+    width: 120px;
+    padding: 1rem;
+    background-color: var(--color-gray);
+    color: var(--color-white);   
+    margin-bottom: 20px;
+}
+.slider-bar li {
+    margin-bottom: 10px;
+}
+.slider-bar-menu {
+    color: var(--color-white);
+    
+}
+
+
+
 /***********************************
     media screen - 601 X 1000 px
 ***********************************/
