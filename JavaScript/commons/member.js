@@ -1,3 +1,21 @@
+export class Member {
+    constructor(name, age, address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+    getName = () => this.name;
+    getAge = () => this.age;
+    getAddress = () => this.address;
+
+    setName = (name) => this.name = name;
+    setName = (age) => this.age = age;
+    setName = (address) => this.address = address;
+
+    // display = () => {
+    //     console.log(this.getName(), this.getAge(), this.getAddress());
+    // }
+}
 export class Student extends Member {
     constructor(name, age, address, sno) {
         super(name, age, address);
