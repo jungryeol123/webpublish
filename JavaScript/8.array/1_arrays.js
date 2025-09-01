@@ -6,3 +6,18 @@
  * - 배열의 저장 요소는 기본 데이터타입, 참조 데이터타입
  */
 let array1 = new Array();
+let array2 = new Array(1,2,3);
+let array3 = new Array(5);
+
+let names = ['홍길동','이순신','김유신'];
+let fruits = ['🍎','🍊','🍋','🍏','🍇'];
+
+console.log(`array1.length --> ${array1.length}`);
+console.log(`array2.length --> ${array2.length}`);
+console.log(`array3.length --> ${array3.length}`);
+console.log(`names.length --> ${names.length}`);
+console.log(`fruits.length --> ${fruits.length}`);
+
+console.log(`names[2] --> ${names[2]}`);
+names[2] = '홍길순';
+console.log(`names[2] --> ${names[2]}`);
