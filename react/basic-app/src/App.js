@@ -33,7 +33,6 @@ export default function App() {
         "href" :"https://www.naver.com"
       }
     ];
-
   return (
     <>
     <MyTitle />

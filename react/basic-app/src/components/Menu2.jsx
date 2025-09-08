@@ -11,8 +11,9 @@
 export function Menu2({data}) {
     const {title, href, color, bg} = data;
     return(
-        <a className="menu" href={href}
-            style={{color :color, background : bg}}>{title}</a>
+        <a href={href}
+           className="menu"
+           style={{color :color, background : bg}}>{title}</a>
     );
 }
 
