@@ -6,8 +6,6 @@ export function UserInfo() {
         ageRef : useRef(null),
         addressRef : useRef(null)
     };
-    
-
 
     const initForm = {
                     name:"",
