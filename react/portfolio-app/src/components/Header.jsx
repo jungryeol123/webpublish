@@ -4,7 +4,7 @@ import { ToggleButton } from "./header/ToggleButton.jsx";
 export function Header() {
     return (
          <header className="header">
-        <Logo img="portfolio_image/favicon.ico"
+        <Logo img="./portfolio_image/favicon.ico"
               name="Judy"  />
         <MenuList />
         <ToggleButton />
