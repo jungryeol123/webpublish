@@ -1,0 +1,122 @@
+{
+    "header" : { "menus":[
+        { "href":"#home", "name" : "Home" },
+        { "href":"#about", "name" : "About" },
+        { "href":"#skills",  "name" : "Skills" },
+        { "href":"#mywork",  "name" : "My Work" },
+        { "href":"#testimonial",  "name" : "Testimonial" },
+        { "href":"#contact", "name" : "Contact" }
+    ]},
+    "content" : {
+        "home" :  {
+        "img" : "/portfolio_image/favicon.ico",
+        "name" : "Judy",
+        "title" : "Junior Developer",
+        "description" : "A software engineer currently residing in Seoul, South Korea"
+      },
+      "about" : {
+            "majors" :[
+        { 
+            "icons" : "html", 
+            "title" : "Front-end",
+            "subjects" : "HTML, CSS, JavaScript, TypeScript, React, WebAPIS",
+            "style" : "fa-brands fa-html5 major-icon"
+        },
+        { 
+            "icons" : "mobile", 
+            "title" : "Mobile",
+            "subjects" : "Android Studio, React Native, ios, Swift, Java, Kotlin",
+            "style" : "fa-solid fa-mobile major-icon"
+        },
+        { 
+            "icons" : "server", 
+            "title" : "Back-end",
+            "subjects" : "Java, JavaScript, Go, Kotlin, Spring, Spring Boot",
+            "style" : "fa-solid fa-server major-icon"
+        }
+        ],
+            "jobs" : [
+        {
+            "img" : "/portfolio_image/jobs/google.png",
+            "msg" : "google_img",
+            "name" : "Google As Junior Software Engineer",
+            "period" : "2019 Oct - Until now"
+        },
+        {
+            "img" : "/portfolio_image/jobs/samsung.png",
+            "msg" : "samsung_img",
+            "name" : "Samsung As Junior Software Engineer",
+            "period" : "2010 Oct - 2019 Oct"
+        }
+        ]
+      },
+      "skills" : {
+    "coding" :  [
+        {"title" : "HTML", "value" : "98%", "width" : "98%"},
+        {"title" : "CSS", "value" : "90%", "width" : "90%"},
+        {"title" : "JavaScript", "value" : "90%", "width" : "90%"},
+        {"title" : "TypeScript", "value" : "80%", "width" : "80%"},
+        {"title" : "React", "value" : "79%", "width" : "79%"},
+        {"title" : "NodeJs", "value" : "68%", "width" : "68%"}
+    ],
+    "tools" : [
+        "Visual Studio Code",
+        "IntelliJ",
+        "Android Studio",
+        "Eclipse",
+        "MySQL Workbench"
+    ],
+    "etc" : [
+        "Git",
+        "Scrum Master",
+        "SVN"
+    ]
+
+      },
+      "work" : {
+        "titles" :[
+       {"title" : "All" ,"count": "8"},
+       {"title" : "Front-end" ,"count": "4"},
+       {"title" : "Back-end" ,"count": "2"},
+       {"title" : "Mobile" ,"count": "2"}
+        ], 
+    "projects" : [
+        {"img":"/portfolio_image/projects/project1.webp", "msg": "project #1"},
+        {"img":"/portfolio_image/projects/project2.webp", "msg": "project #2"},
+        {"img":"/portfolio_image/projects/project3.webp", "msg": "project #3"},
+        {"img":"/portfolio_image/projects/project4.webp", "msg": "project #4"},
+        {"img":"/portfolio_image/projects/project5.webp", "msg": "project #5"},
+        {"img":"/portfolio_image/projects/project6.webp", "msg": "project #6"},
+        {"img":"/portfolio_image/projects/project7.webp", "msg": "project #7"},
+        {"img":"/portfolio_image/projects/project8.webp", "msg": "project #8"}
+        ]
+    },
+    "testimonials" : {
+        "testimonialList" :  [
+        {
+            "img" : "/portfolio_image/testimonials/people1.webp",
+            "alt" : "peaple1",
+            "description" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ut ex rerum provident assumenda quod. Sequi mollitia commodi quae, fugiat aspernatur tempora expedita explicabo quoipsa eius quas voluptates dolores",
+            "name" : "Smith Park",
+            "company" : "Samsung"
+        },
+        {
+            "img" : "/portfolio_image/testimonials/people2.webp",
+            "alt" : "peaple2",
+            "description" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ut ex rerum provident assumenda quod. Sequi mollitia commodi quae, fugiat aspernatur tempora expedita explicabo quoipsa eius quas voluptates dolores",
+            "name" : "Pual Kim",
+            "company" : "Google"
+        },
+        {
+            "img" : "/portfolio_image/testimonials/people3.webp",
+            "alt" : "peaple3",
+            "description" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ut ex rerum provident assumenda quod. Sequi mollitia commodi quae, fugiat aspernatur tempora expedita explicabo quoipsa eius quas voluptates dolores",
+            "name" : "Anna Jin",
+            "company" : "Kakao"
+        }
+    ]
+    }
+
+},
+    "footer" : {}
+ }

@@ -1,5 +1,5 @@
 
-export function AvatarImage({img, msg, style}) {
+export function AvatarImage ({img, msg, style}) {
     return (
            <img src={img} 
                 alt={msg} 

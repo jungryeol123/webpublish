@@ -11,21 +11,21 @@ export function Job({img,msg,name,period}) {
     );
 }
 
-export function Jobs() {
-    const jobs = [
-        {
-            "img" : "/portfolio_image/jobs/google.png",
-            "msg" : "google_img",
-            "name" : "Google As Junior Software Engineer",
-            "period" : "2019 Oct - Until now"
-        },
-        {
-            "img" : "/portfolio_image/jobs/samsung.png",
-            "msg" : "samsung_img",
-            "name" : "Samsung As Junior Software Engineer",
-            "period" : "2010 Oct - 2019 Oct"
-        }
-    ]
+export function Jobs({ jobs }) {
+    // const jobs = [
+    //     {
+    //         "img" : "/portfolio_image/jobs/google.png",
+    //         "msg" : "google_img",
+    //         "name" : "Google As Junior Software Engineer",
+    //         "period" : "2019 Oct - Until now"
+    //     },
+    //     {
+    //         "img" : "/portfolio_image/jobs/samsung.png",
+    //         "msg" : "samsung_img",
+    //         "name" : "Samsung As Junior Software Engineer",
+    //         "period" : "2010 Oct - 2019 Oct"
+    //     }
+    // ]
     return (
          <ul className="jobs">
             { jobs && jobs.map((job)=> 
