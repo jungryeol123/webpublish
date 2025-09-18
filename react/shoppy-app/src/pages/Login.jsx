@@ -1,31 +1,38 @@
-import '../styles/cgv.css'
-import '../styles/commons.css'
-
 
 export function Login() {
     return(
-        <div class="content">
-        <div class="center-layout login-form">
-            <h1 class="center-title">로그인</h1>
-            <form action="#" method="post">
+        <div className="content">
+        <div className="center-layout login-form">
+            <h1 className="center-title">로그인</h1>
+            <form onSubmit={handleLoginSubmit}>
                 <ul>
                     <li>
                         <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
                     </li>
                     <li>
-                        <div class="login-form-input">
-                            <i class="fa-regular fa-user"></i>
-                            <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요"/>
+                        <div className="login-form-input">
+                            <i className="fa-regular fa-user"></i>
+                            <input type="text" 
+                                   name="id" 
+                                   value={FormData.id}
+                                   ref={idRef}
+                                   onChange={handleFormChange}
+                                   placeholder="아이디를 입력해주세요"/>
                         </div>
                     </li>
                     <li>
-                        <div class="login-form-input">
-                            <i class="fa-solid fa-lock"></i>
-                            <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요"/>
+                        <div className="login-form-input">
+                            <i className="fa-solid fa-lock"></i>
+                            <input type="password" 
+                                   name="pwd" 
+                                   value={FormData.pwd}
+                                   ref={pwdRef}
+                                   onChange={handleFormChange}
+                                   placeholder="비밀번호를 입력해주세요"/>
                         </div>
                     </li>
                     <li>
-                        <button type="button" class="btn-main-color" onclick="loginCheck()">로그인</button>
+                        <button type="button" className="btn-main-color" >로그인</button>
                     </li>
                     <li>
                         <div>
@@ -40,7 +47,7 @@ export function Login() {
                         </div>
                     </li>
                     <li>
-                        <button  class="btn-main-color-naver" >네이버 로그인</button>
+                        <button  className="btn-main-color-naver" >네이버 로그인</button>
                     </li>
                 </ul>
                 <div>

@@ -16,26 +16,7 @@ export function Signup() {
     const [form,setForm] = useState(initForm(initArray));
     const [msg,setMsg] = useState(initForm(initArray));
     
-    // const [form,setForm] = useState({id:'',pwd:'',cpwd:'',name:'',phone:'',emailName:'',emailDomain:''});
-    // const [msg,setMsg] = useState({id:'',pwd:'',cpwd:'',name:'',phone:'',emailName:'',emailDomain:''});
-    // const [error,setError] = useState('');
-
-    // const refs = {
-    //     idRef : useRef(null),
-    //     pwdRef : useRef(null),
-    //     cpwdRef : useRef(null),
-    //     nameRef :useRef(null),
-    //     phoneRef : useRef(null),
-    //     emailNameRef :useRef(null),
-    //     emailDomainRef : useRef(null),
-    //     msgidRef : useRef(null),
-    //     msgpwdRef : useRef(null),
-    //     msgcpwdRef : useRef(null),
-    //     msgnameRef : useRef(null),
-    //     msgphoneRef : useRef(null),
-    //     msgemailNameRef : useRef(null),
-    //     msgemailDomainRef : useRef(null)
-    // }
+   
     const handleChangeForm = (e) => {
         const { name,value } = e.target;
         setForm({...form, [name]:value});
