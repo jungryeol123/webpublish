@@ -4,7 +4,6 @@ import { SkillsContent } from "./SkillsContent.jsx";
 
 export function Skills({ data }) {
 
-
     return (
         <section id="skills" class="section container">
             <Title title= "My Skills" />

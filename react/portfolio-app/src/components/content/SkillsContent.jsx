@@ -2,20 +2,7 @@ import { Article,CodingSkills,SkillsTitle } from "./Article.jsx";
 import { List } from "../base/List.jsx";
 
 export function SkillsContent({data}) {
-    // const tools = [
-    //     "Visual Studio Code",
-    //     "IntelliJ",
-    //     "Android Studio",
-    //     "Eclipse",
-    //     "MySQL Workbench"
-    // ];
-
-    // const etc = [
-    //     "Git",
-    //     "Scrum Master",
-    //     "SVN"
-    // ]
-    
+   
     
     return (
         <div className="skills">
