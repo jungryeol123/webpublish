@@ -39,7 +39,6 @@ export default function App() {
   //     }
   //   })
   }
-  console.log(cartItems, cartCount);
   
   return (
     <BrowserRouter>

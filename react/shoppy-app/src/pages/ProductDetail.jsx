@@ -4,6 +4,12 @@ import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi'
 import { ImageList } from '../components/commons/ImageList.jsx';
 import { StarRating } from '../components/commons/StarRating.jsx';
+import { Detail } from '../components/detailTabs/Detail.jsx';
+import { Review } from '../components/detailTabs/Review.jsx';
+import { QnA} from '../components/detailTabs/QnA.jsx';
+import { Return} from '../components/detailTabs/Return.jsx';
+
+
 
 export function ProductDetail({addCart}) {
     const {pid} = useParams();
@@ -49,11 +55,8 @@ export function ProductDetail({addCart}) {
                             {`${parseInt(product.price).toLocaleString()}원`}</li>
                         <li className='product-detail-subtitle'>{product.info}</li>    
                         <li className='product-detail-subtitle-star'>
-                            {/* <StarRating totalRate={product.rate}
-                                        style="star-coral"/> */}
-                        { product && typeof product.rate === "number" &&
-                        <StarRating totalRate={product.rate} style="star-coral" />
-                        }
+                            <StarRating totalRate={product.rate}
+                                        style="star-coral"/>
                         <span>527개 리뷰 &nbsp;&nbsp; {">"}</span>
                         </li>    
                         <li className='product-detail-box'>신규회원, 무이자할부 등</li>    
@@ -97,6 +100,13 @@ export function ProductDetail({addCart}) {
                             </li>
                         )}
                 </ul>
+                {tabName === "detail" 
+                                && < Detail imgList={imgList}
+                                            info={product.detailInfo} />}
+
+                {tabName ==="review" && <Review />}
+                {tabName ==="qna" && <QnA />}
+                {tabName === "return" && <Return />}
                 
             </div>
             <div style={{marginBottom: "50px"}}></div>
