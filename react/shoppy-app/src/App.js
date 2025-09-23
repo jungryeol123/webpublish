@@ -10,7 +10,7 @@ import { Layout } from './pages/Layout.jsx'
 import { useEffect,useState } from 'react';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Cart } from './pages/Cart.jsx';
-import { cartItemsCheck } from './utils/cart.js'
+import { cartItemsCheck,updateCartItemsQty } from './utils/cart.js'
 
 export default function App() {
   //1. 장바구니 수량 관리 : setCartCount
@@ -24,21 +24,23 @@ export default function App() {
     // setCartItems([...cartItems, cartItem]);
     setCartItems(cartItemsCheck(cartItems,cartItem))
     setCartCount(cartCount + 1);
-
-  //   setCartItems((prevItems)=> {
-  //     const existItem = prevItems.find((item) => item.pid === cartItem.pid && item.size === cartItem.size);
-  //     if(existItem) {
-  //       return prevItems.map((item) =>
-  //         item.pid === cartItem.pid && item.size === cartItem.size
-  //         ? {...item,qty : item.qty +1 }
-  //         :item
-  //       );
-      
-  //     } else {
-  //       return [...prevItems, {...cartItem}];
-  //     }
-  //   })
   }
+  const updateCart = (cid,type) => {
+    if(type === undefined){
+       const findItem = cartItems.find(item => item.cid === cid);
+        setCartCount(cartCount - findItem.qty);
+        
+        setCartItems((cartItems) => {
+            return cartItems.filter(item => !(item.cid === cid));
+        });
+    } else {
+    setCartItems(updateCartItemsQty(cartItems,cid,type));
+    type === "+" ? setCartCount(cartCount+1)
+                 : cartCount > 1 ? setCartCount(cartCount-1) : setCartCount(cartCount);
+    }
+  }
+  // console.log(cartItems);
+  
   
   return (
     <BrowserRouter>
@@ -49,7 +51,8 @@ export default function App() {
           <Route path='/all' element={<Products/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
-          <Route path='/cart' element={<Cart />}/>
+          <Route path='/cart' element={<Cart items = {cartItems} 
+                                             updateCart={updateCart}/>}/>
           <Route path='/products/:pid' element={<ProductDetail addCart={addCart}/>}/>
         </Route>
 
