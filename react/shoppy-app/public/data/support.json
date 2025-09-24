@@ -5,12 +5,12 @@
     ],
 
     "menus" : [
-        {"href":"#", "name":"전체","style": "fillter-menu"},
-        {"href":"#", "name":"시스템점검","style": "fillter-menu"},
-        {"href":"#", "name":"극장","style": "fillter-menu"},
-        {"href":"#", "name":"행사/이벤트","style": "fillter-menu"},
-        {"href":"#", "name":"제휴이벤트","style": "fillter-menu"},
-        {"href":"#", "name":"기타","style": "fillter-menu"}
+        {"href":"#", "name":"전체","style": "fillter-menu", "type" : "all"},
+        {"href":"#", "name":"시스템점검","style": "fillter-menu", "type":"system"},
+        {"href":"#", "name":"극장","style": "fillter-menu", "type":"theater"},
+        {"href":"#", "name":"행사/이벤트","style": "fillter-menu", "type":"event"},
+        {"href":"#", "name":"제휴이벤트","style": "fillter-menu", "type":"partner"},
+        {"href":"#", "name":"기타","style": "fillter-menu", "type":"etc"}
     ],
 
 
