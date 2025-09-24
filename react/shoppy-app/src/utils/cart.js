@@ -30,7 +30,8 @@ export function cartItemsAddInfo(products, items) {
       ...item,
       image : product.image,
       name : product.name,
-      price : product.price 
+      price : product.price,
+      info : product.info
     };
   });
 }

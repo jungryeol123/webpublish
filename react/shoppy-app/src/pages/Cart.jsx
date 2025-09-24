@@ -4,9 +4,10 @@ import { RiDeleteBin6Line } from 'react-icons/ri'
 import { useState,useEffect } from 'react';
 import { axiosData } from '../utils/dataFetch.js';
 import { cartItemsAddInfo,getTotalPrice } from '../utils/cart.js';
-
+import { Link,useNavigate } from 'react-router-dom'
 
 export function Cart({items,updateCart}) {
+    const navigate = useNavigate();
     const [cartList,setCartList] = useState([]);
     const [totalPrice,setTotalPrice] = useState(0);
 
@@ -67,7 +68,7 @@ export function Cart({items,updateCart}) {
                             <p className='cart-item-price'>
                                 {parseInt(item.price).toLocaleString()}원</p>
                         </div>
-                        <div className='cart-quantity'>
+                         <div className='cart-quantity'>
                             <button type='button'  onClick={()=>{ item.qty > 1 && handleUpdateCartList(item.cid,'-')}}>-</button>
                             <input type="text" value={item.qty} readOnly/>
                             <button type='button' onClick={()=>{handleUpdateCartList(item.cid,'+')}}>+</button>
@@ -80,6 +81,7 @@ export function Cart({items,updateCart}) {
             )}
 
             {/* 주문 버튼 출력 */}
+            {cartList && cartList.length > 0 ?
             <>
                 <div className='cart-summary'>
                     <h3>주문 예상 금액</h3>
@@ -103,9 +105,18 @@ export function Cart({items,updateCart}) {
                     </p>
                 </div>
                 <div className='cart-actions'>
-                    <button type='button'>주문하기</button>
+                    <button type='button' onClick={() => {
+                        navigate("/checkout", {state : {cartList : cartList , totalPrice : totalPrice}})
+                    }}>주문하기</button>
                 </div>
             </>
+            : <div>
+            <p> 장바구니에 담은 상품이 없습니다. &nbsp;&nbsp;&nbsp;&nbsp;
+                  <Link to = "/all">상품보러가기</Link>
+            </p>
+            <img src="/images/cart.jpg" style={{width:"100%", marginTop : "10px"}} />
+            </div>
+        }
         </div>
     );
 }

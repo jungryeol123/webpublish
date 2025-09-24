@@ -14,10 +14,14 @@ export function Header({cartCount}) {
             <nav className="header-right">
                 <Link to="/all">Products</Link>
                 <Link to="/cart">MyCart({cartCount})</Link>
-                <Link to="/login"><button type="button">Login</button></Link>
+                <Link to="/login"><button type="button">로그인</button></Link>
                 <Link to="/signup">
-                    <button type="button">Signup</button>
+                    <button type="button">회원가입</button>
                 </Link>
+                <Link to="/support">
+                    <button type="button">고객센터</button>
+                </Link>
+
                 
             </nav>
             </div>
