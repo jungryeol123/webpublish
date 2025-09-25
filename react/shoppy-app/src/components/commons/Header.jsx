@@ -5,7 +5,7 @@ import { useState,useEffect } from "react";
 export function Header({cartCount}) {
     useEffect(() => {
         const loginInfo = localStorage.getItem("loginInfo");
-        console.log('loginInfo-->' , JSON.parse(loginInfo).userId);    //문자열을 JSON 객체로 변환
+        console.log('loginInfo-->' , JSON.parse(loginInfo));    //문자열을 JSON 객체로 변환
     },[]);
     
 
