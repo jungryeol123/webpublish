@@ -15,6 +15,9 @@ import { cartItemsCheck,updateCartItemsQty } from './utils/cart.js'
 import { CheckoutInfo } from './pages/CheckoutInfo.jsx'
 import { Support } from './pages/Support.jsx'
 import { CartProvider } from './context/CartContext.js';
+import { AuthProvider } from './context/AuthContext.js';
+import { ProtectedPageRoute } from './pages/ProtectedPageRoute.js';
+import { ProductProvider } from './context/ProductContext.js';
 
 export default function App() {
   //1. 장바구니 수량 관리 : setCartCount
@@ -47,6 +50,8 @@ export default function App() {
   
   
   return (
+    <AuthProvider>
+    <ProductProvider>
     <CartProvider >
     <BrowserRouter>
       <Routes>
@@ -56,17 +61,21 @@ export default function App() {
           <Route path='/all' element={<Products/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
-          <Route path='/cart' element={<Cart items = {cartItems} 
-                                             updateCart={updateCart}/>}/>
+          <Route path='/cart' element={<ProtectedPageRoute><Cart items = {cartItems} 
+                                             updateCart={updateCart}/>
+                                             </ProtectedPageRoute>}
+                                             />
           <Route path='/products/:pid' element={<ProductDetail />}/>
-          <Route path='/checkout' element={<CheckoutInfo />} />
-          <Route path='/support' element={<Support />} />
-          
+          <Route path='/checkout' element={<ProtectedPageRoute><CheckoutInfo /></ProtectedPageRoute>} />
+          <Route path='/support' element={<ProtectedPageRoute>
+                                            <Support />
+                                          </ProtectedPageRoute>} />
         </Route>
-
       </Routes>
     </BrowserRouter>
     </CartProvider >
+    </ProductProvider>
+    </AuthProvider>
   );
 }
 

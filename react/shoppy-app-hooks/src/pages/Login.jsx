@@ -4,8 +4,11 @@ import { FaRegUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import { validateFormCheck } from '../utils/validate.js';
 import { CartContext } from '../context/CartContext.js';
+import { AuthContext } from '../context/AuthContext.js';
+import { useAuth } from '../hooks/useAuth.js';
 
 export function Login() {
+    const { handleLogin } = useAuth();
     const { cartCount } = useContext(CartContext);
     const navigate = useNavigate();
     const idRef = useRef(null);
@@ -29,29 +32,26 @@ export function Login() {
         }
         if(validateFormCheck(param)) {
             // console.log('서버전송 ---> ', formData);  
-            // const did = "test";
-            // const dpwd = "1234";
-            // if(did === formData.id && dpwd === formData.pwd){
-            //     alert("로그인 성공!!");
-            //     const loginInfo = {
-            //         "userId":formData.id,
-            //         "token":"token1234"
-            //     }
-            //     localStorage.setItem("loginInfo",JSON.stringify(loginInfo)) //객체를 문자열로 저장
-            //     navigate("/");
-            //     // localStorage.setItem("userId",formData.id);
-            //     // localStorage.setItem("token","token1234");
-            // } else {
-            //     alert("로그인 실패!!, 다시 입력해주세요");
-            //     idRef.current.focus();
-            // }
+            const did = "test";
+            const dpwd = "1234";
+            if(did === formData.id && dpwd === formData.pwd){
+                alert("로그인 성공!!");
+               handleLogin(formData.id);
+         
+                navigate("/");
+                // localStorage.setItem("userId",formData.id);
+                // localStorage.setItem("token","token1234");
+            } else {
+                alert("로그인 실패!!, 다시 입력해주세요");
+                idRef.current.focus();
+            }
         }
     }
     
     return (
     <div className="content">
         <div className="center-layout login-form">
-            <h1 className="center-title">로그인{ cartCount }</h1>
+            <h1 className="center-title">로그인</h1>
             <form onSubmit={handleLoginSubmit}>
                 <ul>
                     <li>
