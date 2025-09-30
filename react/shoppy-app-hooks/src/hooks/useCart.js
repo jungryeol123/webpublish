@@ -41,7 +41,7 @@ export function useCart() {
                 :   item  
         ));
 
-        //수량 변경에 따른 전체 상품 가격 변경
+        //수량 변경에 따른 전체 상품 가격 변경 
         const findItem = cartList.find((item) => item.cid === cid);
         type === '+'?  setTotalPrice(totalPrice + findItem.price) 
                         : findItem.qty > 1 ? setTotalPrice(totalPrice-findItem.price)
