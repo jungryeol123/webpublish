@@ -32,6 +32,7 @@ export function Login() {
             setErrors: setErrors,
             errors: errors
         }
+
         const succ = dispatch(getLogin(formData,param));        //비동기식 처리 후 isLogin 변경
         if(succ) {
             alert("로그인 성공!!");
@@ -40,7 +41,6 @@ export function Login() {
             alert("로그인 실패!!");
             idRef.current.focus();
         }
-      
     }
     
     return (
