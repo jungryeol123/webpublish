@@ -20,7 +20,7 @@ export function ProductList() {
     useEffect(()=> {
       //1. createProduct
       // createProduct(number);
-      dispatch(getProductList);
+      dispatch(getProductList(number));
       },[number]);
 
     return (

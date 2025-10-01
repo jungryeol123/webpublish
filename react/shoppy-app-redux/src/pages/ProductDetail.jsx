@@ -10,11 +10,11 @@ import { QnA} from '../components/detailTabs/QnA.jsx';
 import { Return} from '../components/detailTabs/Return.jsx';
 import { useDispatch,useSelector } from 'react-redux';
 import { addCart } from '../feature/cart/cartAPI.js';
-import { getProduct,getProductList } from '../feature/product/productAPI.js'
+import { getProduct } from '../feature/product/productAPI.js'
 
 export function ProductDetail() {
-    const dispatch = useDispatch();
     const {pid} = useParams();
+    const dispatch = useDispatch();
     const product = useSelector((state) => state.product.product);
     const imgList = useSelector((state) => state.product.product.imgList);
 
