@@ -1,18 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext.js"; 
 import { useAuth } from "../../hooks/useAuth.js";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { getLogout } from "../../feature/auth/authAPI.js";
+
 
 export function Header() {
-    const { handleLogout } = useAuth();
-    const { isLogin } = useContext(AuthContext);
+    // const { handleLogout } = useAuth();
+    // const { isLogin } = useContext(AuthContext);
     // const { cartCount } = useContext(CartContext);
-
-    const cartCount = useSelector((state) => state.cart.cartCount);
-    const cartList = useSelector((state) => state.cart.cartList);
     // console.log("Header:::cartList-->",cartList);
+    // const cartList = useSelector((state) => state.cart.cartList);
+
+    const dispatch = useDispatch();
+    const cartCount = useSelector((state) => state.cart.cartCount);
+    const isLogin = useSelector((state) => state.auth.isLogin);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        const succ = dispatch(getLogout());
+        const loginInfo = localStorage.getItem("loginInfo");
+        if(succ && loginInfo === null) alert("로그아웃 되었습니다.");
+        navigate("/");
+    }
     
 
     return (

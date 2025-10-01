@@ -51,6 +51,7 @@ export default function App() {
   
   
   return (
+    
     <AuthProvider>
     <ProductProvider>
     <CartProvider >
@@ -62,7 +63,9 @@ export default function App() {
           <Route path='/all' element={<Products/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
-          <Route path='/cart' element={<Cart />}/>
+          <Route path='/cart' element={<ProtectedPageRoute>
+                                          <Cart />
+                                       </ProtectedPageRoute>}/>
           <Route path='/products/:pid' element={<ProductDetail />}/>
           <Route path='/checkout' element={<ProtectedPageRoute><CheckoutInfo /></ProtectedPageRoute>} />
           <Route path='/support' element={<ProtectedPageRoute>
@@ -74,6 +77,7 @@ export default function App() {
     </CartProvider >
     </ProductProvider>
     </AuthProvider>
+  
   );
 }
 

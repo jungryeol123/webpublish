@@ -6,15 +6,17 @@ import { validateFormCheck } from '../utils/validate.js';
 import { CartContext } from '../context/CartContext.js';
 import { AuthContext } from '../context/AuthContext.js';
 import { useAuth } from '../hooks/useAuth.js';
+import { useDispatch } from 'react-redux';
+import { getLogin } from '../feature/auth/authAPI.js';
 
 export function Login() {
-    const { handleLogin } = useAuth();
-    const { cartCount } = useContext(CartContext);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const idRef = useRef(null);
     const pwdRef = useRef(null);
     const [formData, setFormData] = useState({id:'', pwd:''});
     const [errors, setErrors] = useState({id:'', pwd:''});
+    
 
     const handleFormChange = (e) => {
         const { name, value } = e.target; 
@@ -30,22 +32,15 @@ export function Login() {
             setErrors: setErrors,
             errors: errors
         }
-        if(validateFormCheck(param)) {
-            // console.log('서버전송 ---> ', formData);  
-            const did = "test";
-            const dpwd = "1234";
-            if(did === formData.id && dpwd === formData.pwd){
-                alert("로그인 성공!!");
-               handleLogin(formData.id);
-         
-                navigate("/");
-                // localStorage.setItem("userId",formData.id);
-                // localStorage.setItem("token","token1234");
-            } else {
-                alert("로그인 실패!!, 다시 입력해주세요");
-                idRef.current.focus();
-            }
+        const succ = dispatch(getLogin(formData,param));        //비동기식 처리 후 isLogin 변경
+        if(succ) {
+            alert("로그인 성공!!");
+            navigate("/");
+        } else {
+            alert("로그인 실패!!");
+            idRef.current.focus();
         }
+      
     }
     
     return (

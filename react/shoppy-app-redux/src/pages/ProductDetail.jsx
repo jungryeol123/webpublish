@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi'
@@ -8,41 +8,24 @@ import { Detail } from '../components/detailTabs/Detail.jsx';
 import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA} from '../components/detailTabs/QnA.jsx';
 import { Return} from '../components/detailTabs/Return.jsx';
-// import { useCart } from '../hooks/useCart.js';
-import { useProduct } from '../hooks/useProduct.js';
-import { ProductContext } from '../context/ProductContext.js';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { addCart } from '../feature/cart/cartAPI.js';
-
-
+import { getProduct,getProductList } from '../feature/product/productAPI.js'
 
 export function ProductDetail() {
     const dispatch = useDispatch();
-    // const { addCart } = useCart();
-    const { filterProduct } = useProduct();
-    const { product, imgList } = useContext(ProductContext);
-
     const {pid} = useParams();
+    const product = useSelector((state) => state.product.product);
+    const imgList = useSelector((state) => state.product.product.imgList);
+
     const [size,setSize] = useState('XS');
     const tabLabels = ['DETAIL','REVIEW','Q&A','RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
     const tabEventNames = ['detail','review','qna','return'];
     
     useEffect(() => {
-        filterProduct(pid);
+        dispatch(getProduct(pid));
     },[]);
-
-    //쇼핑백 추가하기
-    const handleAddCartItem = () => {
-        
-        const cartItem = {
-            pid: product.pid,
-            size: size,
-            qty : 1
-        }
-        // addCart(cartItem);
-        dispatch(addCart(cartItem));   //addcart호출 시 dispatch 전송!!
-    }
 
     return (
         <div className='content'>
@@ -78,7 +61,7 @@ export function ProductDetail() {
                                     className='product-detail-button order'>바로구매</button>
                             <button type='button'
                                     className='product-detail-button cart'
-                                    onClick={handleAddCartItem}>
+                                    onClick={() => {dispatch(addCart(product.pid,size));}}>
                                     쇼핑백 담기</button>
                             <div type="button"
                                     className='gift'>

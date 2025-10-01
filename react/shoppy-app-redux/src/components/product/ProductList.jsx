@@ -5,17 +5,22 @@ import { axiosData,groupByRows } from '../../utils/dataFetch.js'
 import { Link } from 'react-router-dom';
 import { useProduct } from '../../hooks/useProduct.js';
 import { ProductContext } from '../../context/ProductContext.js';
+import { useDispatch, useSelector } from "react-redux"
+import { getProductList } from '../../feature/product/productAPI.js'
 
 export function ProductList() {
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.product.productList);
     
-    const { productList } = useContext(ProductContext);
-    const { createProduct } = useProduct();
+    // const { productList } = useContext(ProductContext);
+    // const { createProduct } = useProduct();
     const [rows,setRows] = useState([]);
     const [number,setNumber] = useState(3);
 
     useEffect(()=> {
       //1. createProduct
-      createProduct(number);
+      // createProduct(number);
+      dispatch(getProductList);
       },[number]);
 
     return (
