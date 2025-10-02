@@ -21,7 +21,6 @@ export function ProductList() {
       //1. createProduct
       // createProduct(number);
       dispatch(getProductList(number));
-      
       },[number]);
 
     return (
