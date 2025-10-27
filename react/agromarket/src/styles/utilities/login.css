@@ -58,18 +58,24 @@
   box-shadow: 0 6px 18px rgba(73,73,177,0.2);
 }
 
-.btn-main-color {
+/* 버튼 스타일 및 공통 간격 */
+.center-layout.login-form .btn-main-color,
+.center-layout.login-form .btn-main-color-naver {
   width: 100%;
   padding: 12px 0;
   border-radius: 12px;
-  background-color: #4949b1ff;
-  color: #fff;
   font-weight: 700;
   font-size: 15px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(73,73,177,0.25);
+  margin-top: 12px; /* 버튼 간격 */
   transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-main-color {
+  background-color: #4949b1ff;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(73,73,177,0.25);
 }
 
 .btn-main-color:hover {
@@ -78,38 +84,16 @@
 }
 
 .btn-main-color-naver {
-  width: 100%;
-  padding: 12px 0;
-  border-radius: 12px;
   background-color: #03c75a;
   color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
 }
 
-.login-form li div a {
-  font-size: 13px;
-  color: #4949b1ff;
-  text-decoration: none;
-  margin: 0 4px;
-}
-
-.login-form li div span {
-  color: #9aa0a6;
-  font-size: 13px;
-}
-
-.login-form span {
-  color: red;
-  font-size: 0.8rem;
-}
 .login-form li div.links {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   font-size: 13px;
+  margin-top: 8px; 
 }
 
 .login-form li div.links a {
@@ -119,8 +103,19 @@
 
 .login-form li div.links span {
   color: #9aa0a6;
+  font-size: 13px;
 }
 
+.login-form span {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.login-form img {
+  margin-top: 16px;
+  width: 100%;
+  border-radius: 10px;
+}
 
 @media (max-width: 440px) {
   .center-layout.login-form {
