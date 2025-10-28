@@ -1,0 +1,117 @@
+.product-card {
+  border-radius: 8px;
+  overflow: visible;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  // &:hover {
+  //   transform: translateY(-20px);
+  //   z-index: 10;
+  //   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); // ✅ 살짝 떠오르는 느낌
+  // }
+
+  /* ✅ 뱃지 */
+  .badge-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .badge-container.multi {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .badge {
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+
+    &.hot {
+      background-color: #8c4eff; // 보라색
+    }
+
+    &.member {
+      background-color: #2c7a4b; // 녹색
+    }
+  }
+
+  /* ✅ 이미지 */
+  .product-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  /* ✅ 정보 영역 */
+  .product-info {
+    padding: 5px;
+
+    .product-name {
+      font-size: clamp(0.7rem, 1.8vw, 1.3rem);
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .price-wrap {
+      margin-bottom: 8px;
+
+      .discount {
+        color: #d32f2f;
+        font-weight: bold;
+        margin-right: 6px;
+      }
+
+      .discounted-price {
+        color: #222;
+        font-weight: 700;
+        font-size: 15px;
+        margin-right: 6px;
+      }
+
+      .original-price {
+        color: #999;
+        font-size: 13px;
+        text-decoration: line-through;
+      }
+
+
+
+      .or-price {
+        color: #222;
+        font-weight: 700;
+        font-size: 15px;
+        margin-right: 6px;
+      }
+    }
+
+    .cart-btn {
+      width: 100%;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      padding: 6px 0;
+      font-size: 13px;
+      border-radius: 4px;
+      transition: 0.2s;
+
+      &:hover {
+        background: #2c7a4b;
+        color: #fff;
+        border-color: #2c7a4b;
+      }
+    }
+  }
+}
+
